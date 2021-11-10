@@ -4,22 +4,22 @@
 
       .data
 prompt: .asciiz "Enter value at index "
-colon: .asciiz ": "
-msg1: .asciiz "\n Printing values... \n"
-msg2: .asciiz "\nDone!"
-nl: .asciiz "\n"
+colon:  .asciiz ": "
+msg1:   .asciiz "\nPrinting values...\n"
+msg2:   .asciiz "\nDone!"
+nl:     .asciiz "\n"
 
-      .align 2 #jump to next address divisible by 2^n (4)
+        .align 2 #jump to next address divisible by 2^n (4)
 
-array: .space 20 #takes a number of bytes that you want, we want an array of integers which are 4 bytes, we want 5 things here
+array:  .space 20 #takes a number of bytes that you want, we want an array of integers which are 4 bytes, we want 5 things here
 
       .text
       .globl main
 main:
       #initializing looping variables
-      li $s0, 5 #max
       li $t0, 0 #i
       la $t1, array #load array address into t1
+      li $s0, 5 #max
 
 loop1:
       #make our loop condition with a branching statement
@@ -46,10 +46,39 @@ loop1:
       addi $t0, $t0, 1
       addi $t1, $t1, 4
 
-      j loop
+      j loop1
 
 print:
+      #initialize loop values
+      li $t0, 0 #t0 = index
+      la $t1, array #t1 = array address
+      li $s0, 5 #s0 = loop limit
 
+      li $v0, 4
+      la $a0, msg1
+      syscall
+
+loop2: #loop to print array contents
+      bge $t0, $s0, exit #loop while t0 < s0
+
+      li $v0, 1 #print out the integer
+      lw $a0, 0($t1) #get the word from the array
+      syscall
+
+      li $v0, 4 #print out newline character
+      la $a0, nl
+      syscall
+
+      #increment stuff
+      addi $t0, $t0, 1
+      addi $t1, $t1, 4
+
+      j loop2
+
+exit:
+      li $v0, 4
+      la $a0, msg2
+      syscall
 
       #graceful exit
       li $v0, 10
