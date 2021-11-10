@@ -40,7 +40,7 @@ loop1:
       li $v0, 5 #read int into $v0
       syscall
 
-      sw $v0, 0($t1) #address for array stored in t1
+      sw $v0, 0($t1) #address for array stored in t1, store content of v0 into array at address t1
 
       #increment
       addi $t0, $t0, 1
