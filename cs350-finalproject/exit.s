@@ -1,5 +1,5 @@
       .data
-msg: .asciiz "Goodbye."
+msg: .asciiz "\nGoodbye."
 
       .text
       .globl main

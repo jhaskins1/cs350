@@ -9,7 +9,7 @@
 # summation
 
       .data
-prmt: .asciiz "1) Addition\n2) Subtraction\n3) Multiplication\n4) Division\n5) Modulo\n6) Square\n7) Factorial\n8) Summation\n9) Exit\nPlease select an option 1-9: "
+prmt: .asciiz "\n1) Addition\n2) Subtraction\n3) Multiplication\n4) Division\n5) Modulo\n6) Square\n7) Factorial\n8) Summation\n9) Exit\nPlease select an option 1-9: "
 
       .text
       .globl main
@@ -26,13 +26,13 @@ main:
       #branch accordingly, or repeat
       li $t0, 1
 
-      #beq $t0, $v0, addition
+      beq $t0, $v0, addition
       addi $t0, $t0, 1
-      #beq $t0, $v0, subtraction
+      beq $t0, $v0, subtraction
       addi $t0, $t0, 1
-      #beq $t0, $v0, multiplication
+      beq $t0, $v0, multiplication
       addi $t0, $t0, 1
-      #beq $t0, $v0, division
+      beq $t0, $v0, division
       addi $t0, $t0, 1
       #beq $t0, $v0, modulo
       addi $t0, $t0, 1
