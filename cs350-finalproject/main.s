@@ -36,9 +36,9 @@ main:
       addi $t0, $t0, 1
       beq $t0, $v0, modulo
       addi $t0, $t0, 1
-      #beq $t0, $v0, square
+      beq $t0, $v0, square
       addi $t0, $t0, 1
-      #beq $t0, $v0, factorial
+      beq $t0, $v0, factorial
       addi $t0, $t0, 1
       #beq $t0, $v0, summation
       addi $t0, $t0, 1
