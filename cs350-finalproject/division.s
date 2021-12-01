@@ -1,5 +1,5 @@
       .data
-msg: .asciiz "\nPlease enter the two values that you would like to subtract.\n(First input / second input)\n"
+msg: .asciiz "\nPlease enter the two values that you would like to divide.\n(First input / second input)\n"
 msgo: .asciiz "Output: "
 nl: .asciiz "\n"
 

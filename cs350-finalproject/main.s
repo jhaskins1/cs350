@@ -34,7 +34,7 @@ main:
       addi $t0, $t0, 1
       beq $t0, $v0, division
       addi $t0, $t0, 1
-      #beq $t0, $v0, modulo
+      beq $t0, $v0, modulo
       addi $t0, $t0, 1
       #beq $t0, $v0, square
       addi $t0, $t0, 1
