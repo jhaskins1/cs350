@@ -25,7 +25,6 @@ main:
 
       #branch accordingly, or repeat
       li $t0, 1
-
       beq $t0, $v0, addition
       addi $t0, $t0, 1
       beq $t0, $v0, subtraction
@@ -40,7 +39,7 @@ main:
       addi $t0, $t0, 1
       beq $t0, $v0, factorial
       addi $t0, $t0, 1
-      #beq $t0, $v0, summation
+      beq $t0, $v0, summation
       addi $t0, $t0, 1
       beq $t0, $v0, exit
       addi $t0, $t0, 1
